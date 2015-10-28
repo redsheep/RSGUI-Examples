@@ -1,0 +1,46 @@
+<html>
+    <head>
+      <meta charset="UTF-8" />
+      <title>RSGUI examples</title>
+      <script src="javascripts/phaser.min.js"></script>
+  		<script src="javascripts/rsgui.min.js"></script>
+    </head>
+    <body>
+
+    <script type="text/javascript">
+    window.onload = function() {
+      var game = new Phaser.Game(480, 320, Phaser.CANVAS, '',{preload:preload,create:create});
+      game.gui=new RSGUI(game);
+      game.gui.loadTheme('theme/theme.json');
+      function preload() {
+        game.gui.loadAsset();
+      }
+      function create() {
+          game.stage.backgroundColor = 0xcccccc;
+          button1=game.gui.add.button(0,0,"showWindow");
+          button2=game.gui.add.button(150,0,"closeWindow");
+          var mywin=game.gui.add.window(240,150,400,240,"window");
+          var button4=game.gui.add.radiobox(200,120,"radiobox",mywin);
+          var button14=game.gui.add.checkbox(200,140,"checkbox",mywin);
+          var button5=game.gui.add.textinput(20,130,"text",mywin);
+          var button6=game.gui.add.toggle(20,0,"toggle",mywin);
+          var button16=game.gui.add.rating(120,20,3,mywin);
+          var button7=game.gui.add.dropdown(20,80,"text",mywin);
+          var button8=game.gui.add.tooltip(30,20,'this is a tip',mywin);
+          var button9=game.gui.add.scrollbar(350,10,20,180,'vertical',mywin);
+          var button9=game.gui.add.scrollbar(20,180,300,20,'horizontal',mywin);
+          var button10=game.gui.add.listview(240,10,100,100,mywin);
+          var button11=game.gui.add.button(-20,0,"this is a wide button",button10);
+          var button12=game.gui.add.button(-20,40,"this is a wide button",button10);
+          button2.events.onInputDown.add(function(){
+            mywin.close();
+          },this);
+          button1.events.onInputDown.add(function(){
+            mywin.show();
+          },this);
+      }
+    };
+    </script>
+
+    </body>
+</html>

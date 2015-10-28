@@ -1,0 +1,29 @@
+<html>
+    <head>
+      <meta charset="UTF-8" />
+      <title>RSGUI examples</title>
+      <script src="javascripts/phaser.min.js"></script>
+  		<script src="javascripts/rsgui.min.js"></script>
+    </head>
+    <body>
+
+    <script type="text/javascript">
+    window.onload = function() {
+      var game = new Phaser.Game(480, 320, Phaser.CANVAS, '',{preload:preload,create:create});
+      game.gui=new RSGUI(game);
+      function preload() {
+      }
+      function create() {
+        game.stage.backgroundColor = 0xcccccc;
+        button1=game.gui.add.button(0,0,"button");
+		button3=game.gui.add.radiobox(200,120,"radiobox");
+        button4=game.gui.add.checkbox(200,140,"checkbox");
+        button5=game.gui.add.textinput(20,130,"text");
+        button6=game.gui.add.toggle(120,0,"toggle");
+        button7=game.gui.add.dropdown(20,80,"text");
+      }
+    };
+    </script>
+
+    </body>
+</html>
