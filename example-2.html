@@ -16,7 +16,8 @@
       function create() {
         game.stage.backgroundColor = 0xcccccc;
         button1=game.gui.add.button(0,0,"showWindow");
-        button2=game.gui.add.button(150,0,"closeWindow");
+        button2=game.gui.add.button(125,0,"closeWindow");
+        button3=game.gui.add.button(250,0,"enableDrag");
         var mywin=game.gui.add.window(240,150,400,240,"window");
 		//var toggle=game.gui.add.toggle(20,0,"toggle",mywin);
         button2.events.onInputDown.add(function(){
@@ -24,6 +25,9 @@
         },this);
         button1.events.onInputDown.add(function(){
           mywin.show();
+        },this);
+		button3.events.onInputDown.add(function(){
+          mywin.input.enableDrag();
         },this);
       }
     };

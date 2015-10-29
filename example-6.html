@@ -15,16 +15,16 @@
       }
       function create() {
         game.stage.backgroundColor = 0xcccccc;
-        var list1=game.gui.add.listview(0,0,game.width/2,game.height);
-		list1.setBGColor('#888');
-        var list2=game.gui.add.listview(game.width/2,0,game.width/2,game.height);
-		list2.setBGColor('#999');
-		game.gui.add.radiobox(50,50,"radiobox1",list1);
-		game.gui.add.radiobox(50,100,"radiobox2",list1);
-		game.gui.add.radiobox(50,150,"radiobox3",list1);
-		game.gui.add.radiobox(50,50,"radiobox1",list2);
-		game.gui.add.radiobox(50,100,"radiobox2",list2);
-		game.gui.add.radiobox(50,150,"radiobox3",list2);
+        var button1=game.gui.add.button(0,0,'normal');
+        var button2=game.gui.add.button(0,75,'scale');
+        var button3=game.gui.add.button(0,150,'resize');
+		button2.width=120;button2.height=50;
+		button3.resize(120,50);
+        var button5=game.gui.add.button(150,0,'fontsize:16px');
+        var button6=game.gui.add.button(150,75,'fontsize:26px');
+        var button7=game.gui.add.button(150,150,'fontsize:36px');
+		button6.setFont('26px');
+		button7.setFont('36px');
       }
     }
     </script>
