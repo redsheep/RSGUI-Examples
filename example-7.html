@@ -1,0 +1,39 @@
+<html>
+    <head>
+      <meta charset="UTF-8" />
+      <title>RSGUI examples</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+      <script src="javascripts/phaser.min.js"></script>
+  		<script src="javascripts/rsgui.min.js"></script>
+    </head>
+    <body>
+
+    <script type="text/javascript">
+    window.onload = function() {
+      var theme={
+        "webfont":{"google":{"families":["Bangers","Sigmar One","Press Start 2P"]}},
+      }
+      var game = new Phaser.Game(480, 320, Phaser.CANVAS, '',{preload:preload,create:create});
+      game.gui=new RSGUI(game);
+      function preload() {
+        game.gui.loadTheme(theme);
+      }
+      function create() {
+        game.stage.backgroundColor = 0xcccccc;
+        button1=game.gui.add.button(0,0,"default font style");
+        button2=game.gui.add.button(0,50,"font change error due to theme delay!");
+        button3=game.gui.add.button(0,100,"font change after theme loaded!");
+        button4=game.gui.add.button(0,150,"font change after theme loaded!");
+        button5=game.gui.add.button(0,200,"font change after theme loaded!");
+        button2.setFont("Bangers");
+        game.gui.ready(function(){
+          button3.setFont("Bangers");
+          button4.setFont("'Sigmar One'");
+          button5.setFont("'Press Start 2P'");
+        })
+      }
+    };
+    </script>
+
+    </body>
+</html>
