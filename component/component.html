@@ -1,0 +1,381 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>RSGUI</title>
+	<link rel="stylesheet" href="styles.css" type="text/css" />
+
+  <script src="../javascripts/jquery.min.js"></script>
+  <script src="../javascripts/phaser.min.js"></script>
+  <script src="../javascripts/rsgui.min.js"></script>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+	<style>
+	.container{
+	    margin: 0 auto;
+	}
+	.tabs{
+	    margin: 0px;
+	    padding: 0px;
+	    list-style: none;
+	    border-bottom: 1px #000 solid;
+	}
+	.tabs li{
+	    display: inline-block;
+	    margin:0;
+	    padding: 5px 10px 5px 10px;
+	    cursor: pointer;
+	}
+	.tabs li:hover {
+	    background:#ccc;
+  }
+	.tabs li.current{
+	    background: #999;
+	    color: #FFF;
+	}
+	.tab-content{
+	    display: none;
+	    background: #ccc;
+	    padding: 15px;
+	}
+	.tab-content.current{
+	    display: inherit;
+	}
+	</style>
+</head>
+
+<body>
+
+	<section id="body" class="width">
+		<aside id="sidebar" class="column-left">
+
+			<header>
+				<h1><a href="../index.html">RSGUI</a></h1>
+				<div style="float:right"><iframe src="https://ghbtns.com/github-btn.html?user=redsheep&repo=RSGUI&type=star&count=true"
+				frameborder="0" scrolling="0" width="170px" height="20px"></iframe></div>
+			</header>
+
+			<nav id="mainnav">
+				<ul id="top-menu">
+					<li class="selected-item"><a href="#button">Button</a></li>
+					<li><a href="#checkbox">Checkbox</a></li>
+					<li><a href="#radiobox">Radiobox</a></li>
+					<li><a href="#dropdown">Dropdown</a></li>
+					<li><a href="#scrollbar">Scrollbar</a></li>
+					<li><a href="#processbar">Processbar</a></li>
+					<li><a href="#label">Label</a></li>
+					<li><a href="#listview">Listview</a></li>
+					<li><a href="#tooltip">Tooltip</a></li>
+					<li><a href="#textinput">Textinput</a></li>
+					<li><a href="#window">Window</a></li>
+				</ul>
+			</nav>
+
+		</aside>
+		<section id="content" class="column-right">
+
+<!--			<p>The NinePatch class permits drawing a bitmap in nine or more sections.
+			Essentially, it allows the creation of custom graphics that will scale
+			the way that you define, when content added within the image exceeds
+			the normal bounds of the graphic.</p>-->
+<!-- Button -->
+      <a id="button" name="button"></a>
+			<article >
+				<h2>Button</h2>
+        <p>A button provides the user a simple way to trigger an event,
+					like confirming an action upon touch and is typically labeled using text,
+					 an icon, or both.</p>
+        <div id="btnState"></div>
+        <br/>
+				<table>
+          <tr><th>Properties</th><th>Description</th></tr>
+          <tr><td>Text</td><td>Text labeled inner button component</td></tr>
+        </table>
+        <br/>
+				<table>
+          <tr><th>Event</th><th>Description</th></tr>
+          <tr><td>onClick</td><td>Fired when the buttons is release from pressed state</td></tr>
+        </table>
+			</article>
+<!-- Dropdown -->
+      <a id="checkbox" name="checkbox"></a>
+			<article>
+        <h2>Checkbox</h2>
+        <p>Checkboxes allow the user to select one or more options from a set.
+					 It is usually best to present checkboxes in a vertical list.
+					 More than one column is acceptable as well if the list is long enough
+					 that it might require scrolling or if comparison of terms might be necessary.</p>
+			 	<div id="chkState"></div>
+				<a href=""/>
+        <br/>
+				<table>
+          <tr><th>Properties</th><th>Description</th></tr>
+          <tr><td>Text</td><td>Text labeled after checkbox component</td></tr>
+          <tr><td>Group</td><td>Enabled Behaviours are Updated</td></tr>
+        </table>
+        <br/>
+				<table>
+          <tr><th>Event</th><th>Description</th></tr>
+          <tr><td>onChange</td><td>Set selection and transition to appropriate state</td></tr>
+        </table>
+			</article>
+<!-- Radiobox -->
+      <a id="radiobox" name="radiobox"></a>
+			<article>
+        <h2>Radiobox</h2>
+        <p>Radio buttons allow the user to select one option from a set.
+					You should use radio buttons for optional sets that are mutually
+					exclusive if you think that the user needs to see all available
+					options side-by-side.</p>
+        <div id="radState"></div>
+        <br/>
+				<table>
+          <tr><th>Properties</th><th>Description</th></tr>
+          <tr><td>Text</td><td>Text labeled after radiobox component</td></tr>
+          <tr><td>Group</td><td>Enabled Behaviours are Updated</td></tr>
+        </table>
+        <br/>
+				<table>
+          <tr><th>Event</th><th>Description</th></tr>
+          <tr><td>onChange</td><td>Set selection and transition to appropriate state</td></tr>
+        </table>
+			</article>
+<!-- Dropdown -->
+      <a id="dropdown" name="dropdown"></a>
+			<article >
+        <h2>Dropdown</h2>
+        <p>Dropdown lists allow users to select one item at a time,
+					similarly to radio buttons, but are more compact allowing you to save space.
+					Consider adding text to the field, such as Select one to help the user
+					recognize the necessary action.</p>
+        <div id="drpState"></div>
+        <br/>
+				<table>
+          <tr><th>Properties</th><th>Description</th></tr>
+          <tr><td>Options</td><td>Options candicated for user selection</td></tr>
+          <tr><td>Selected</td><td>Selected option value</td></tr>
+        </table>
+        <br/>
+				<table>
+          <tr><th>Event</th><th>Description</th></tr>
+          <tr><td>onSelect</td><td>Set selection and transition to appropriate state</td></tr>
+        </table>
+			</article>
+<!-- Scrollbar -->
+      <a id="scrollbar" name="scrollbar"></a>
+			<article >
+        <h2>Scrollbar</h2>
+        <p>A slider, also known as a track bar, allows users to set or adjust a value.
+					 When the user changes the value, it does not change the format of the
+					 interface or other info on the screen.</p>
+        <div id="scbState"></div>
+        <br/>
+				<table>
+          <tr><th>Properties</th><th>Description</th></tr>
+          <tr><td>Value</td><td>Value of current scrolling position</td></tr>
+        </table>
+        <br/>
+				<table>
+          <tr><th>Event</th><th>Description</th></tr>
+          <tr><td>onChange</td><td>Set selection to appropriate state</td></tr>
+        </table>
+			</article>
+<!-- Processbar -->
+      <a id="processbar" name="processbar"></a>
+			<article >
+        <h2>Processbar</h2>
+        <p>A progress bar is used to visualize the progression of an extended
+					computer operation, such as a download,file transfer, or installation.
+					Sometimes, the graphic is accompanied by a textual representation of
+					the progress in a percent format</p>
+        <div id="pbrState"></div>
+        <br/>
+				<table>
+          <tr><th>Properties</th><th>Description</th></tr>
+          <tr><td>Value</td><td>Value of current scrolling position</td></tr>
+        </table>
+        <br/>
+				<table>
+          <tr><th>Event</th><th>Description</th></tr>
+          <tr><td>onChange</td><td>Set transition to appropriate state</td></tr>
+        </table>
+			</article>
+<!-- Label -->
+      <a id="label" name="label"></a>
+			<article >
+        <h2>Label</h2>
+        <p>A label is a graphical control element which displays text on a form.
+					It is usually a static control; having no interactivity. A label is
+					generally used to identify a nearby text box or other widget.</p>
+        <div id="lblState"></div>
+        <br/>
+				<table>
+          <tr><th>Properties</th><th>Description</th></tr>
+          <tr><td>Text</td><td>Text labeled inner button component</td></tr>
+        </table>
+        <br/>
+				<table>
+          <tr><th>Event</th><th>Description</th></tr>
+          <tr><td></td><td></td></tr>
+        </table>
+			</article>
+<!-- Listview -->
+      <a id="listview" name="listview"></a>
+			<article >
+        <h2>Listview</h2>
+        <p>ListView is a view group that displays a list of scrollable items.
+					The list items are automatically inserted to the list using an Adapter
+					that pulls content from a source such as an array or database query
+					and converts each item result into a view that's placed into the list.</p>
+        <div id="lstState"></div>
+        <br/>
+				<table>
+          <tr><th>Properties</th><th>Description</th></tr>
+          <tr><td>Enable</td><td>Enabled Behaviours are Updated</td></tr>
+        </table>
+        <br/>
+				<table>
+          <tr><th>Event</th><th>Description</th></tr>
+          <tr><td>onSwipe</td><td>Triggered when the user press down and swipes over the listview</td></tr>
+        </table>
+			</article>
+<!-- Tooltip -->
+      <a id="tooltip" name="tooltip"></a>
+			<article >
+        <h2>Tooltip</h2>
+        <p>The tooltip is used in conjunction with a cursor,
+					usually a pointer. The user hovers the pointer over an item,
+					without clicking it, and a tooltip may appear—a small "hover box"
+					with information about the item being hovered over.</p>
+        <div id="tipState"></div>
+        <br/>
+				<table>
+          <tr><th>Properties</th><th>Description</th></tr>
+          <tr><td>Text</td><td>Text labeled inner tip component</td></tr>
+        </table>
+        <br/>
+				<table>
+          <tr><th>Event</th><th>Description</th></tr>
+          <tr><td>onShow</td><td>Fire after a tip control is shown</td></tr>
+        </table>
+			</article>
+<!-- Textinput -->
+      <a id="textinput" name="textinput"></a>
+			<article >
+        <h2>Textinput</h2>
+        <p>A text box, is a graphical control element intended to enable the
+					user to input text information to be used by the program. Human Interface
+					Guidelines recommend a single-line text box when only one line of input is required,
+					and a multi-line text box only if more than one line of input may
+					be required. Non-editable text boxes can serve the purpose of simply
+					displaying text.</p>
+        <div id="txtState"></div>
+        <br/>
+				<table>
+          <tr><th>Properties</th><th>Description</th></tr>
+          <tr><td>Text</td><td>The text displayed in the TextInput</td></tr>
+        </table>
+        <br/>
+				<table>
+          <tr><th>Event</th><th>Description</th></tr>
+          <tr><td>onChange</td><td>Occurs when the text value has been changed</td></tr>
+        </table>
+			</article>
+<!-- Window -->
+      <a id="window" name="window"></a>
+			<article >
+        <h2>Window</h2>
+        <p>window is a graphical control element. It consists of a visual area
+					containing some of the graphical user interface of the program it
+					belongs to and is framed by a window decoration. It usually has a
+					rectangular shape[1] that can overlap with the area of other windows.</p>
+        <div id="winState"></div>
+        <br/>
+				<table>
+          <tr><th>Properties</th><th>Description</th></tr>
+          <tr><td>Enable</td><td>Enabled Behaviours are Updated</td></tr>
+        </table>
+        <br/>
+				<table>
+          <tr><th>Event</th><th>Description</th></tr>
+          <tr><td>onShow</td><td>Fire after the window is shown</td></tr>
+        </table>
+			</article>
+
+			<footer class="clear">
+        <p class="copyright">RSGUI maintained by <a href="https://github.com/redsheep">redsheep</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+			</footer>
+		</section>
+		<div class="clear"></div>
+	</section>
+
+  <script>
+  $('#mainnav li').on('click',function(){
+    $('#mainnav .selected-item').removeClass('selected-item');
+    $(this).addClass('selected-item');
+  })
+	// Cache selectors
+	var lastId,
+	    topMenu = $("#top-menu"),
+	    topMenuHeight = topMenu.outerHeight()+15,
+	    // All list items
+	    menuItems = topMenu.find("a"),
+	    // Anchors corresponding to menu items
+	    scrollItems = menuItems.map(function(){
+	      var item = $($(this).attr("href"));
+	      if (item.length) { return item; }
+	    });
+
+	// Bind click handler to menu items
+	// so we can get a fancy scroll animation
+	menuItems.click(function(e){
+	  var href = $(this).attr("href"),
+	      offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
+	  $('html, body').stop().animate({
+	      scrollTop: offsetTop
+	  }, 300);
+	  e.preventDefault();
+	});
+
+	// Bind to scroll
+	$(window).scroll(function(){
+	   // Get container scroll position
+	   var fromTop = $(this).scrollTop()+topMenuHeight;
+
+	   // Get id of current scroll item
+	   var cur = scrollItems.map(function(){
+	     if ($(this).offset().top < fromTop)
+	       return this;
+	   });
+	   // Get the id of the current element
+	   cur = cur[cur.length-1];
+	   var id = cur && cur.length ? cur[0].id : "";
+
+	   if (lastId !== id) {
+	       lastId = id;
+	       // Set/remove active class
+	       menuItems
+	         .parent().removeClass("selected-item")
+	         .end().filter("[href='#"+id+"']").parent().addClass("selected-item");
+	   }
+	});
+	$('ul.tabs li').click(function(){
+      var tab_id = $(this).attr('data-tab');
+      $('ul.tabs li').removeClass('current');
+      $('.tab-content').removeClass('current');
+      $(this).addClass('current');
+      $("#"+tab_id).addClass('current');
+  })
+  </script>
+  <script src="button.js"></script>
+  <script src="checkbox.js"></script>
+  <script src="radiobox.js"></script>
+  <script src="dropdown.js"></script>
+  <script src="textinput.js"></script>
+  <script src="window.js"></script>
+  <script src="scrollbar.js"></script>
+  <script src="processbar.js"></script>
+  <script src="tooltip.js"></script>
+  <script src="listview.js"></script>
+</body>
+</html>
