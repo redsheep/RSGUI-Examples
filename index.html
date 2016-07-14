@@ -1,78 +1,96 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="RSGUI : Gui Library for Phaser">
-    <link rel="stylesheet" src="stylesheets/bPopup.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="description" content="RSGUI : GUI Library for Phaser">
+  <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+  <script src="javascripts/jquery.min.js"></script>
+  <style>
+  ul li img{
+    border: 0;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    -ms-box-shadow: none;
+    margin: 0;
+  }
+  ul li{
+    display: block;
+    font-size:large;
+    list-style-type:none;
+    float: left;
+    border: 1px solid black;
+    text-align: center;
+    background-color: white;
+    width: 30%;
+  }
+  ul li p{
+    background-color: lightgray;
+    margin: 0;
+  }
+  .cbox{
+    margin: 50px 0;
+  }
+  .cbox h3{
+    text-shadow: #333 0px 0px 3px;
+  }
+  #header_wrap .inner{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    text-align: center;
+    text-shadow: #ccc 0px 0px 5px;
+  }
+  pre{
+    padding:10px;
+  }
+  </style>
+  <title>RSGUI</title>
+</head>
 
-    <script src="javascripts/jquery.min.js"></script>
-    <script src="javascripts/bPopup.min.js"></script>
-    <style>
-        .box {
-          width: 30%;
-			margin:5px 2px;
-            border-radius: 2px;
-            box-shadow: 0 0 2px 2px #999;
-        }
-		   pre{
-			width:90%;
-			padding:2%;
-		   }
-        @media screen and (max-width: 480px) {
-           .box {
-             width: 45%;
-           }
-        }
-        #element_to_pop_up {
-            background-color: #fff;
-            border-radius: 10px 10px 10px 10px;
-            box-shadow: 0 0 25px 5px #999;
-            color: #111;
-            min-width: 500px;
-            min-height: 340px;
-            padding: 20px;
-            display:none;
-        }
-    </style>
-    <title>RSGUI</title>
-  </head>
+<body>
 
-  <body>
+  <!-- HEADER -->
+  <div id="header_wrap" class="outer">
+    <header class="inner">
+      <a id="forkme_banner" href="https://github.com/redsheep/RSGUI">View on GitHub</a>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/redsheep/RSGUI">View on GitHub</a>
+      <h1 id="project_title">RSGUI</h1>
+      <h2 id="project_tagline">GUI Library for Phaser</h2>
 
-          <h1 id="project_title">RSGUI</h1>
-          <h2 id="project_tagline">Gui Library for Phaser</h2>
+      <section id="downloads">
+        <a class='documentation_link' href="component/component.html">Document</a>
+        <a class='example_link' href="compose/example.html">Example</a>
+        <a class="zip_download_link" href="https://github.com/redsheep/RSGUI/zipball/master">Download this project as a .zip file</a>
+        <a class="tar_download_link" href="https://github.com/redsheep/RSGUI/tarball/master">Download this project as a tar.gz file</a>
+      </section>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/redsheep/RSGUI/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/redsheep/RSGUI/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+      <h1 style="color:white">Making Game Development<br/>Simpler and Faster</h1>
+    </header>
+  </div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-<h3><a id="features" class="anchor" href="#features" aria-hidden="true">
-  <span class="octicon octicon-link"></span></a>Features</h3>
-<p>
-  <ul>
-  <li>Built-in GUI components</li>
-  <li>Theme support</li>
-  <li>Easy to use</li>
-</ul>
-</p>
+  <!-- MAIN CONTENT -->
+  <div id="main_content_wrap" class="outer">
+    <section id="main_content" class="inner">
 
-<h3><a id="usage" class="anchor" href="#examples" aria-hidden="true">
-  <span class="octicon octicon-link"></span></a>Usage</h3>
-<p>
+      <div class="cbox">
+        <h3><a id="features" class="anchor" href="#features" aria-hidden="true">
+          <span class="octicon octicon-link"></span></a>Features</h3>
+          <p>
+
+            <ul>
+              <li><img src="images/component.png"/><p>GUI components</p></li>
+              <li><img src="images/art.png"/><p>Theme support</p></li>
+              <li><img src="images/fast.png"/><p>Easy to use</p></li>
+            </ul>
+          </p>
+          <p style="clear:both;"></p>
+        </div>
+        <div class="cbox">
+          <h3><a id="usage" class="anchor" href="#examples" aria-hidden="true">
+            <span class="octicon octicon-link"></span></a>Getting Started</h3>
+            <p>
 <pre><span style="color:#ff5600">var</span> game <span style="color:#ff5600">=</span> <span style="color:#ff5600">new</span> <span style="color:#21439c">Phaser.Game</span>(480, 320, Phaser.CANVAS,
 <span style="color:#00a33f">''</span>, {preload:preload,create:create});
 game.gui <span style="color:#ff5600">=</span> <span style="color:#ff5600">new</span> <span style="color:#21439c">RSCanvasGUI</span>(game);
@@ -87,40 +105,25 @@ game.gui.loadTheme(<span style="color:#00a33f">'theme.json'</span>);
   button1 <span style="color:#ff5600">=</span> game.gui.add.button(0,0,<span style="color:#00a33f">"button"</span>);
 }
 </pre>
-</p>
-
-<h3><a id="examples" class="anchor" href="#examples" aria-hidden="true">
-  <span class="octicon octicon-link"></span></a>Examples</h3>
-
-<p>
-<iframe id="element_to_pop_up"></iframe>
-<img id="example-1" src="images/01.png" class='box'></img>
-<img id="example-2" src="images/02.png" class='box'></img>
-<img id="example-5" src="images/05.png" class='box'></img>
-<img id="example-6" src="images/06.png" class='box'></img>
-<img id="example-3" src="images/03.png" class='box'></img>
-<img id="example-4" src="images/04.png" class='box'></img>
-<img id="example-7" src="images/07.png" class='box'></img>
-</p>
-
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">RSGUI maintained by <a href="https://github.com/redsheep">redsheep</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-    <script type="text/javascript">
-    $(document).ready(function(){
-      $('img').bind('click', function(e) {
+            </p>
+          </div>
+        </section>
+      </div>
+      <!-- FOOTER  -->
+      <div id="footer_wrap" class="outer">
+        <footer class="inner">
+          <p class="copyright">RSGUI maintained by <a href="https://github.com/redsheep">redsheep</a></p>
+          <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+        </footer>
+      </div>
+      <script type="text/javascript">
+      $(document).ready(function(){
+        $('img').bind('click', function(e) {
           e.preventDefault();
-		  $('#element_to_pop_up').attr("src",$(this).attr('id')+'.html');
+          $('#element_to_pop_up').attr("src",$(this).attr('id')+'.html');
           $('#element_to_pop_up').bPopup();
+        });
       });
-    });
-    </script>
-  </body>
-</html>
+      </script>
+    </body>
+    </html>

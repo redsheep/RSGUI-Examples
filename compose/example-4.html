@@ -2,8 +2,8 @@
     <head>
       <meta charset="UTF-8" />
       <title>RSGUI examples</title>
-      <script src="javascripts/phaser.min.js"></script>
-  		<script src="javascripts/rsgui.min.js"></script>
+      <script src="../javascripts/phaser.min.js"></script>
+  		<script src="../javascripts/rsgui.min.js"></script>
     </head>
     <body>
 
@@ -12,7 +12,6 @@
       var game = new Phaser.Game(480, 320, Phaser.CANVAS, '',{preload:preload,create:create});
       game.gui=new RSGUI(game);
       function preload() {
-        game.gui.loadTheme('theme/theme.json');
       }
       function create() {
           game.stage.backgroundColor = 0xcccccc;
