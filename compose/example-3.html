@@ -3,9 +3,7 @@
       <meta charset="UTF-8" />
       <title>RSGUI examples</title>
       <script src="../javascripts/phaser.min.js"></script>
-      <script src="../javascripts/headJS.js"></script>
-  		<script src="../javascripts/PreloadRSGUI.js"></script>
-  		<!--<script src="../javascripts/rsgui.min.js"></script>-->
+  		<script src="../javascripts/rsgui.min.js"></script>
     </head>
     <body>
 
@@ -14,10 +12,11 @@
       var game = new Phaser.Game(480, 320, Phaser.CANVAS, '',{preload:preload,create:create});
       game.gui=new RSGUI(game);
       function preload() {
-        game.gui.loadTheme('theme/theme.json');
+        game.gui.loadTheme('../theme/theme.json');
       }
       function create() {
-          game.stage.backgroundColor = 0xcccccc;
+        game.stage.backgroundColor = 0xcccccc;
+        game.gui.ready(function(){
           button1=game.gui.add.button(0,0,"showWindow");
           button2=game.gui.add.button(150,0,"closeWindow");
           var mywin=game.gui.add.window(240,150,400,240,"window");
@@ -39,6 +38,7 @@
           button1.events.onInputDown.add(function(){
             mywin.show();
           },this);
+        });
       }
     };
     </script>

@@ -317,10 +317,6 @@ footer p a:hover { color:#333; border-bottom-color: #333; }
 	display: block;
 }
 
-
-
-
-
 @media screen and (max-width: 740px) {
 
 	body { font-size: 0.9em; }
@@ -348,4 +344,39 @@ footer p a:hover { color:#333; border-bottom-color: #333; }
 	nav#mainnav ul li a { margin-top: 0; padding: 1em; }
 
 
+}
+
+.container{
+		margin: 0 auto;
+}
+.tabs{
+		margin: 0px;
+		padding: 0px;
+		list-style: none;
+		border-bottom: 1px #000 solid;
+}
+.tabs li{
+		display: inline-block;
+		margin:0;
+		padding: 5px 10px 5px 10px;
+		cursor: pointer;
+}
+.tabs li:hover {
+		background:#ccc;
+}
+.tabs li.current{
+		background: #999;
+		color: #FFF;
+}
+.tab-content{
+		display: none;
+		background: #ccc;
+		padding: 15px;
+}
+.tab-content.current{
+		display: inherit;
+}
+.source{
+		padding-left: 36px;
+		background: url("../images/source.png") no-repeat;
 }

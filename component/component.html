@@ -9,38 +9,7 @@
   <script src="../javascripts/phaser.min.js"></script>
   <script src="../javascripts/rsgui.min.js"></script>
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
-	<style>
-	.container{
-	    margin: 0 auto;
-	}
-	.tabs{
-	    margin: 0px;
-	    padding: 0px;
-	    list-style: none;
-	    border-bottom: 1px #000 solid;
-	}
-	.tabs li{
-	    display: inline-block;
-	    margin:0;
-	    padding: 5px 10px 5px 10px;
-	    cursor: pointer;
-	}
-	.tabs li:hover {
-	    background:#ccc;
-  }
-	.tabs li.current{
-	    background: #999;
-	    color: #FFF;
-	}
-	.tab-content{
-	    display: none;
-	    background: #ccc;
-	    padding: 15px;
-	}
-	.tab-content.current{
-	    display: inherit;
-	}
-	</style>
+
 </head>
 
 <body>
@@ -85,6 +54,7 @@
 					like confirming an action upon touch and is typically labeled using text,
 					 an icon, or both.</p>
         <div id="btnState"></div>
+				<a class="source" href="https://github.com/redsheep/RSGUI-Examples/blob/gh-pages/component/button.js">source code</a>
         <br/>
 				<table>
           <tr><th>Properties</th><th>Description</th></tr>
@@ -105,7 +75,7 @@
 					 More than one column is acceptable as well if the list is long enough
 					 that it might require scrolling or if comparison of terms might be necessary.</p>
 			 	<div id="chkState"></div>
-				<a href=""/>
+				<a class="source" href="https://github.com/redsheep/RSGUI-Examples/blob/gh-pages/component/checkbox.js">source code</a>
         <br/>
 				<table>
           <tr><th>Properties</th><th>Description</th></tr>
@@ -127,6 +97,7 @@
 					exclusive if you think that the user needs to see all available
 					options side-by-side.</p>
         <div id="radState"></div>
+				<a class="source" href="https://github.com/redsheep/RSGUI-Examples/blob/gh-pages/component/radiobox.js">source code</a>
         <br/>
 				<table>
           <tr><th>Properties</th><th>Description</th></tr>
@@ -148,6 +119,7 @@
 					Consider adding text to the field, such as Select one to help the user
 					recognize the necessary action.</p>
         <div id="drpState"></div>
+				<a class="source" href="https://github.com/redsheep/RSGUI-Examples/blob/gh-pages/component/dropdown.js">source code</a>
         <br/>
 				<table>
           <tr><th>Properties</th><th>Description</th></tr>
@@ -168,6 +140,7 @@
 					 When the user changes the value, it does not change the format of the
 					 interface or other info on the screen.</p>
         <div id="scbState"></div>
+				<a class="source" href="https://github.com/redsheep/RSGUI-Examples/blob/gh-pages/component/scrollbar.js">source code</a>
         <br/>
 				<table>
           <tr><th>Properties</th><th>Description</th></tr>
@@ -188,6 +161,7 @@
 					Sometimes, the graphic is accompanied by a textual representation of
 					the progress in a percent format</p>
         <div id="pbrState"></div>
+				<a class="source" href="https://github.com/redsheep/RSGUI-Examples/blob/gh-pages/component/processbar.js">source code</a>
         <br/>
 				<table>
           <tr><th>Properties</th><th>Description</th></tr>
@@ -207,6 +181,8 @@
 					It is usually a static control; having no interactivity. A label is
 					generally used to identify a nearby text box or other widget.</p>
         <div id="lblState"></div>
+				<a class="source" href="https://github.com/redsheep/RSGUI-Examples/blob/gh-pages/component/label.js">source code</a>
+
         <br/>
 				<table>
           <tr><th>Properties</th><th>Description</th></tr>
@@ -227,6 +203,8 @@
 					that pulls content from a source such as an array or database query
 					and converts each item result into a view that's placed into the list.</p>
         <div id="lstState"></div>
+				<a class="source" href="https://github.com/redsheep/RSGUI-Examples/blob/gh-pages/component/listview.js">source code</a>
+
         <br/>
 				<table>
           <tr><th>Properties</th><th>Description</th></tr>
@@ -247,6 +225,7 @@
 					without clicking it, and a tooltip may appear—a small "hover box"
 					with information about the item being hovered over.</p>
         <div id="tipState"></div>
+				<a class="source" href="https://github.com/redsheep/RSGUI-Examples/blob/gh-pages/component/tooltip.js">source code</a>
         <br/>
 				<table>
           <tr><th>Properties</th><th>Description</th></tr>
@@ -269,6 +248,7 @@
 					be required. Non-editable text boxes can serve the purpose of simply
 					displaying text.</p>
         <div id="txtState"></div>
+				<a class="source" href="https://github.com/redsheep/RSGUI-Examples/blob/gh-pages/component/textinput.js">source code</a>
         <br/>
 				<table>
           <tr><th>Properties</th><th>Description</th></tr>
@@ -289,6 +269,7 @@
 					belongs to and is framed by a window decoration. It usually has a
 					rectangular shape[1] that can overlap with the area of other windows.</p>
         <div id="winState"></div>
+				<a class="source" href="https://github.com/redsheep/RSGUI-Examples/blob/gh-pages/component/window.js">source code</a>
         <br/>
 				<table>
           <tr><th>Properties</th><th>Description</th></tr>
@@ -367,7 +348,8 @@
       $("#"+tab_id).addClass('current');
   })
   </script>
-  <script src="button.js"></script>
+
+	<script src="button.js"></script>
   <script src="checkbox.js"></script>
   <script src="radiobox.js"></script>
   <script src="dropdown.js"></script>
